@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="max-age=must-revalidate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Página personal de Pablo Rios Ramirez">
+    <meta name="author" content="Pablo Ríos Ramírez">
+
+    <title>Pablo Ríos Ramírez</title>
+    <link th:href="@{/images/favicon.ico}" type="image/x-icon}" rel="shortcut icon">
+    <link th:href="@{/images/favicon.ico}" type="image/x-icon}" rel="icon">
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/vendors/bootstrap/4.0.0/css/bootstrap.min.css}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/vendors/fonts-googleapis/css/monserrat.css}" rel="stylesheet">
+    <link th:href="@{/vendors/fonts-googleapis/css/kaushan_script.css}" rel="stylesheet">
+    <link th:href="@{/vendors/fonts-googleapis/css/droid_serif.css}" rel="stylesheet">
+    <link th:href="@{/vendors/fonts-googleapis/css/roboto_slab.css}" rel="stylesheet">
+    <link th:href="@{/vendors/fonts-googleapis/css/roboto_slab.css}" rel="stylesheet">
+
+
+    <link th:href="@{/vendors/DataTables/1.10.16/css/dataTables.bootstrap4.min.css}" rel="stylesheet">
+    <link th:href="@{/vendors/DataTables/1.10.16/css/select.bootstrap4.min.css}" rel="stylesheet">
+    <link th:href="@{/vendors/sweetalert2/7.22.2/css/sweetalert2.css}" rel="stylesheet">
+    <link th:href="@{/vendors/Rainbow/2.1.4/css/css/github.css}" rel="stylesheet">
+    <link th:href="@{/vendors/animate/3.6.1/css/animate.css}" rel="stylesheet">
+    <link th:href="@{/vendors/aos/2.3.1/dist/aos.css}" rel="stylesheet">
+
+    <link th:href="@{/vendors/prBar/1.0.0/css/prBar.css}" rel="stylesheet">
+    <!--\vendor\aos\dist\aos.css-->
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/agency.css}" rel="stylesheet">
+    <style>
+        section{
+            padding: 100px 0px;
+        }
+    </style>
+
+</head>
+<body>
+
+<style>
+    .navbar-container {
+        margin-top: 5px !important;
+    }
+    .dropdown-menu {
+        color: white !important;
+
+        background-color: #00000033 !important;
+    }
+    .dropdown-item:hover {
+        background-color: #00000095 !important;
+        color: #fff !important;
+    }
+    .dropdown-item {
+        background-color: #00000000 !important;
+        color: #fff !important;
+        font-size: 10px !important;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        color: #fed136 !important;
+        text-decoration: none;
+        background-color: #00000033 !important;
+    }
+</style>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <div id="head-navbar" class="container">
+                <div class="col-lg-12" >
+                    Pablo Ríos Ramírez
+                </div>
+                <div class="col-lg-12" style="font-size: 14px;color: white;text-align: right;font-family: none;top: -8px;">
+                    Analista Programador
+                </div>
+            </div>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right}" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Menú">
+            Menú
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#perfil">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+                </li>
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link js-scroll-trigger toggle-api_rest" href="#portfolio">Portafolio</a>-->
+<!--                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#experience">Exp. Laboral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact_me">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .btn-circle {
+        font-size: 26px;
+        width: 55px;
+        height: 55px;
+        margin-top: 15px;
+        line-height: 45px;
+        -webkit-transition: background .3s ease-in-out;
+        -moz-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out;
+        color: #fed136;
+        border: 2px solid #fed136;
+        border-radius: 100%!important;
+        background: 0 0;
+    }
+</style>
+<!-- Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="intro-text" style="padding-top: 150px; padding-bottom: 40px;">
+            <div class="intro-lead-in">
+                <img class="mx-auto rounded-circle" th:src="@{/images/team/2.jpg}"
+                width="150" height="150" alt="Pablo Ríos - Diseñador Web, Desarrollador y MEJOR PERSONA." typeof="foaf:Image">
+            </div>
+            <!--            <div class="intro-lead-in"
+                             style="
+                             font-size: 12px !important;
+                             font-style: normal !important;
+                             font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+                             margin-bottom: 0px !important;
+                             " data-aos="zoom-in">Hola gente! Mi nombre es</div>-->
+            <div  style="margin-bottom: 0px !important; font-size: 50px;"  data-aos="zoom-in">
+                <h4>Pablo Ríos</h4>
+            </div>
+            <div data-aos="zoom-in">
+                <p style="color: #e2dabe !important;">Desarrollador Web / Analista Programador / Mejor Persona :)</p>
+            </div>
+            <!--            <div class="row d-none d-md-block" data-aos="zoom-in" style="margin-top: 40px;">
+                            <div class="col-md-4 " style="margin-top: 5px;margin-bottom: 5px;">
+                                <ul class="list-inline social-buttons">
+                                    <li class="list-inline-item">
+                                        <a href="https://twitter.com/pabloriosramire" title="Twitter">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.linkedin.com/in/pabloriosramirez/" title="Linkedin">
+                                            <i class="fa fa-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://github.com/pabloriosramirez" title="GitHub">
+                                            <i class="fa fa-github"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 5px;margin-bottom: 5px;">
+                                <a href="${request.contextPath}/download/cv" class="btn btn-outline-warning  col-md-12">Certificación SFIA</a>
+                            </div>
+                            <div class="col-md-4" style="margin-top: 5px;margin-bottom: 5px;">
+                                <a href="${request.contextPath}/download/cv" class="btn btn-outline-warning col-md-12">Curriculum Vitae</a>
+                            </div>
+                        </div>-->
+            <div class="row" data-aos="zoom-in" style="margin-top: 80px;">
+                <div class="col-md-4" style="margin-top: 5px;margin-bottom: 5px;">
+                    <a th:href="@{/CV}" class="btn btn-outline-warning col-md-12">Curriculum Vitae</a>
+                </div>
+                <div class="col-md-4 " style="margin-top: 5px;margin-bottom: 5px;">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/pabloriosramire" title="Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/pabloriosramirez/" title="Linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/pabloriosramirez" title="GitHub">
+                                <i class="fa fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4" style="margin-top: 5px;margin-bottom: 5px;">
+                    <a th:href="@{/SFIA}" class="btn btn-outline-warning  col-md-12">Certificación SFIA</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="perfil">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-lg-12 text-center" data-aos="zoom-in">
+                    <h2 class="section-heading text-uppercase">Perfil</h2>
+                    <h3 class="section-subheading text-muted" style="margin-bottom: 60px !important;">Descripción del perfil profesional</h3>
+                </div>
+                <div class="col-lg-12 text-center" data-aos="fade-right">
+                    <label class="text-muted">
+                        Me considero una persona responsable, dinámica y creativa, con facilidad de adaptación y capacidad de trabajar en equipo, con iniciativa para resolver problemas eficientemente.
+                        <br>
+                        <br>
+                        Titulado de Técnico Profesional en Programación Computacional en el Instituto CIISA, actualmente estudiante de Ingeniería en ejecución en Informática en la misma institución académica, con más de 1 año de experiencia en el desarrollo profesional de aplicaciones Java Web, estas aplicaciones se han realizado principalmente para la industria comercial.
+                        <br>
+                        <br>
+                        Profesional con experiencia y conocimientos en el manejo Maven, JasperReports, Web Services, HtmlUnit, Bootstrap, Jquery, no obstante se especializa en back-end en Java.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="map-image">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12  text-center">
+                <h2 class="section-heading text-uppercase" data-aos="zoom-in">Skills</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h5 class="text-uppercase subtitle" data-aos="zoom-in">Soft-skills</h5>
+            </div>
+            <div class="col-lg-6" data-aos="zoom-in-right">
+                <div class="prbar"
+                     data-title="RESOLUCIÓN DE PROBLEMAS"
+                     data-percentage='85'
+                ></div>
+                <div class="prbar"
+                     data-title="CURIOSIDAD"
+                     data-percentage='90'
+                ></div>
+                <div class="prbar"
+                     data-title="AUTOGESTIÓN"
+                     data-percentage='70'
+                ></div>
+            </div>
+            <div class="col-lg-6" data-aos="zoom-in-left">
+                <div class="prbar"
+                     data-title="TRABAJO EN EQUIPO"
+                     data-percentage='80'
+                ></div>
+                <div class="prbar"
+                     data-title="COMUNICACIÓN"
+                     data-percentage='85'
+                ></div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-lg-12">
+                <h5 class="text-uppercase" style="margin-bottom: 20px !important;" data-aos="zoom-in">Skills</h5>
+            </div>
+            <div class="col-lg-6" data-aos="zoom-in-right">
+                <div class="prbar"
+                     data-title="DHTML (HTML, CSS, JAVASCRIPT)"
+                     data-percentage='95'
+                ></div>
+                <div class="prbar"
+                     data-title="JQUERY"
+                     data-percentage='90'
+                ></div>
+                <div class="prbar"
+                     data-title="BOOTSTRAP"
+                     data-percentage='95'
+                ></div>
+                <div class="prbar"
+                     data-title="API / WEB SERVICES"
+                     data-percentage='75'
+                ></div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="prbar"
+                     data-title="JAVA"
+                     data-percentage='80'
+                ></div>
+                <div class="prbar"
+                     data-title="SQL"
+                     data-percentage='75'
+                ></div>
+                <div class="prbar"
+                     data-title="FRAMEWORK SPRING"
+                     data-percentage='60'
+                ></div>
+                <div class="prbar"
+                     data-title="MAVEN"
+                     data-percentage='70'
+                ></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid
+<section class="bg-light" id="portfolio">
+    <div id="cont-portfolio" class="container cont-animate" style="opacity:1;">
+        <div class="row"  data-aos="zoom-in">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Portafolio</h2>
+                <h3 class="section-subheading text-muted">Proyectos para demostración de conocimientos.</h3>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                <div class="portfolio-caption border border-warning">
+                    <h4 style="margin-bottom: 5px;">API Rest - CrudRepository</h4>
+                    <p style="margin-bottom: 20px; font-size: 12px;">Spring Boot, Spring MVC, CrudRepository y Maven</p>
+                    <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo de API Rest desarrollada en lenguaje Java bajo el Framework Spring, la cual realiza las funciones CRUD (Crear, Leer, Actualizar y Borrar) con el objeto Book (Atributos: ID, Title y Author), cuya respuesta es en formato Json además de sus respectivos estados HTTP.</p>
+                    <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'rest-crudrepository/'">Ir a url <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            &lt;!&ndash;            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                            <div class="portfolio-caption border border-warning">
+                                <h4 style="margin-bottom: 5px;">API Rest- HibernateTemplate</h4>
+                                <p style="margin-bottom: 20px; font-size: 12px;">Spring XML, HibernateTemplate y Maven</p>
+                                <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo API Rest Java con el Framework Spring, configurada a traves de Spring XML, por otra parte para la capa repository se ocupa la interfaz HibernateTemplate, además de la integración de su correspondiente ORM Hibernate</p>
+                                <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'rest-hibernatetemplate/persons'">Ir a url <i class="fa fa-search"></i></button>
+                            </div>
+                        </div>&ndash;&gt;
+            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                <div class="portfolio-caption border border-warning">
+                    <h4 style="margin-bottom: 5px;">API Rest- Spring Data Rest</h4>
+                    <p style="margin-bottom: 20px; font-size: 12px;">Spring Data Rest, Spring Boot, PageAndSortRepository y Maven</p>
+                    <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo API Rest Java con el Framework Spring, en especifico el modulo Spring Data Rest, el cual combina automáticamente las funcionalidades de Spring HATEOAS y Spring Data JPA lo que nos proporciona múltiples facilidades, que en esta vez esta conectado con una base de datos MySQL.</p>
+                    <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'rest-springdatarest/'">Ir a url <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                <div class="portfolio-caption border border-warning">
+                    <h4 style="margin-bottom: 5px;">SpringBoot - JasperReports</h4>
+                    <p style="margin-bottom: 20px; font-size: 12px;">Spring Boot, Spring MVC, JasperReports y Maven</p>
+                    <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo de aplicativo Spring Boot con JasperReport, tecnologia que a traves de una plantilla de estilo fija crea reportes con data ingresada en el momento.JasperReports es una de las bibliotecas de generación de reportes más populares en el lenguaje de programación Java.</p>
+                    <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'springboot-jasperreports/'">Ir a url <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                <div class="portfolio-caption border border-warning">
+                    <h4 style="margin-bottom: 5px;">SpringBoot - DynamicJasper</h4>
+                    <p style="margin-bottom: 20px; font-size: 12px;">Spring Boot, Spring MVC, DynamicJasper y Maven</p>
+                    <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo de aplicativo Spring Boot con DynamicJasper, que ha diferencia de ocupar solamente JasperReport, con esta libreria se puede crear el estilo del  reporte de forma programable.</p>
+                    <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'springboot-dynamicjasper/report/pdf'">Ir a url <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-6 portfolio-item" data-aos="fade-right" style="margin-bottom: 50px !important;">
+                <div class="portfolio-caption border border-warning">
+                    <h4 style="margin-bottom: 5px;">SpringBoot - Controller_Multiformat</h4>
+                    <p style="margin-bottom: 20px; font-size: 12px;">Spring Boot, Spring MVC y Maven</p>
+                    <p class="text-muted" style="font-size: 12px; text-align:justify; margin-bottom: 20px;">Demo de aplicativo con ContentNegotiationConfigurer, la cual permitirá a nuestro controlador generar una vista en diversos formatos de salida, como: XML, JSON, PDF, XLS, CVS.</p>
+                    <button class="btn btn-primary col-lg-12}" type="button" onclick="location.href = 'springboot-controllermultiformat/'">Ir a url <i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="col-md-6  portfolio-item" data-aos="fade-right">
+                <div class="portfolio-caption border border-warning">
+                    <img class="img-fluid" th:src="@{/images/construction.png}" alt="">
+                    <h4>Pronto</h4>
+                    <p class="text-muted">...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cont-api_rest" class="container cont-animate d-none" style="opacity:0;">
+        <button type="button" class=" toggle-api_rest btn btn-primary" >Volver <i class="fa fa-backward"></i></button>
+
+        <div class="row" style="margin-bottom: 10px;" data-aos="zoom-in">
+
+            <div class="col-lg-12 text-center" data-aos="zoom-in">
+                <h2 class="section-heading text-uppercase">API Rest</h2>
+                <h3 class="section-subheading text-muted">Proyectos para demostración de conocimientos.</h3>
+            </div>
+        </div>
+        <div class="row"  style="margin-bottom: 30px;">
+            <div class="col-md-12" data-aos="fade-right">
+                <h5>Sobre REST y servicios web</h5>
+                <p>REST es el acrónimo para Representational State Transfer, el cual es un estilo de arquitectura de software altamente utilizado hoy en día para crear aplicaciones distribuidas y modeladas alrededor de la especificación HTTP.</p>
+                &lt;!&ndash;            </div>
+                            <div class="col-md-12" data-aos="zoom-in">&ndash;&gt;
+                <h5>Sobre la solución</h5>
+                <p>En esta ocasión desarrollé una pequeña aplicación web conectada a una base de datos SQL (MySQL), back-end realizado en Java.Cuya finalidad era realizar las operaciones CRUD básicas (Create, Read, Update y Delete) a un objeto Persona(atributos: nombre y apellido).</p>
+                &lt;!&ndash;            </div>
+                            <div class="col-md-12" data-aos="zoom-in">&ndash;&gt;
+                <h5>Tecnologias ocupadas:</h5>
+                <ul>
+                    <li>Lenguaje: Java 8</li>
+                    <li>Estructura: Multicapa (Controller, Service, DAO, Entity)</li>
+                    <li>Base de datos: MySQL</li>
+                    <li>Metodologia: Prototipado</li>
+                    <li>Frameworks: Spring MVC y Maven</li>
+                    <li>Librerias: Hibernate y JDBC</li>
+                </ul>
+                &lt;!&ndash;            </div>
+                            <div class="col-md-12" data-aos="zoom-in">&ndash;&gt;
+                <h5>Links del código y recursos adicionales:</h5>
+                <ul>
+                    <li>Código fuente disponible en mi cuenta de GitHub: <a href="https://github.com/pabloriosramirez" title="GitHub">https://github.com/pabloriosramirez</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-right">
+            <div class="col-md-12">
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header " data-toggle="collapse" data-target="#clps-get" aria-expanded="true" aria-controls="clps-get" >
+                        <div class="row">
+                            <div class="col-md-12 text-uppercase font-weight-bold" id="head-get" style="font-size: 24px;font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                                GET  <i class="fa fa-search"></i>
+                                <a class="pull-right text-muted"><i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clps-get" class="collapse" aria-labelledby="head-get" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-6">
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <button id="all-btn}" type="button" class="btn btn-primary text-uppercase col-md-12"><i class='fa fa-circle-o-notch fa-spin d-none'></i> OBTENER TODAS LAS PERSONAS</button>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-lg-12">
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons?name=<span class="font-weight-bold" style="color: #fed136" id="by_name-inp1-span">{nombre}</span></p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input id="by_name-inp1"  type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'nombre')" maxlength="20" placeholder="Nombre" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese nombre
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button id="by_name-btn}" type="button" class="btn btn-primary text-uppercase col-md-8 col-lg-12">OBTENER PERSONAS POR NOMBRE</button>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-lg-12">
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons?lastname=<span class="font-weight-bold" style="color: #fed136" id="by_lastname-inp1-span">{apellido}</span></p>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'apellido')" maxlength="20" id="by_lastname-inp1" placeholder="Apellido" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese apellido
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <button  id="by_lastname-btn}" type="button" class="btn btn-primary text-uppercase col-md-8 col-lg-12">OBTENER PERSONAS POR APELLIDO</button>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons?name=<span class="font-weight-bold" style="color: #fed136" id="by_name_lastname-inp1-span">{nombre}</span>&lastname=<span class="font-weight-bold" style="color: #fed136" id="by_name_lastname-inp2-span">{apellido}</span></p>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="by_name_lastname-inp1}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'nombre')" maxlength="20" placeholder="Nombre">
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese nombre
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <input id="by_name_lastname-inp2}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'apellido')" maxlength="20" placeholder="Apellido">
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese apellido
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <button id="by_name_lastname-btn}" type="button" class="btn btn-primary text-uppercase col-lg-12">OBTENER PERSONA POR NOMBRE Y APELLIDO</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-right">
+            <div class="col-md-12">
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header " data-toggle="collapse" data-target="#clps-post" aria-expanded="true" aria-controls="clps-get" >
+                        <div class="row">
+                            <div class="col-md-12 text-uppercase font-weight-bold" id="head-post" style="font-size: 24px;font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                                POST  <i class="fa fa-floppy-o"></i>
+                                <a class="pull-right text-muted"><i class="fa fa-chevron-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clps-post" class="collapse" aria-labelledby="head-post" data-parent="#accordion">
+                        <div class="card-body">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-6">
+                                    <h6>URL</h6>
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>HEADERS</h6>
+                                    <pre data-trimmed="true" class="rainbow-show"><code data-language="json" class="rainbow rainbow-show">content-type: application/json</code></pre>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>INPUTS</h6>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <input id="post-inp1}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'nombre')" maxlength="20" placeholder="Nombre">
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese nombre
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 30px;">
+                                        <input id="post-inp2}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'apellido')" maxlength="20" placeholder="Apellido">
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese apellido
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>BODY</h6>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <pre data-trimmed="true" class="rainbow-show"><code data-language="json" class="rainbow rainbow-show">{
+    <span class="string">"name"</span>: <span id="post-inp1-span" class="font-weight-bold text-uppercase" style="color: #fed136; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">{nombre}</span>,
+    <span class="string">"lastName"</span>: <span id="post-inp2-span" class="font-weight-bold text-uppercase" style="color: #fed136; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">{apellido}</span>
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col col-md-6">
+                                    <button id="post-btn}" type="button" class="btn btn-primary text-uppercase col-md-12"><i class='fa fa-circle-o-notch fa-spin d-none'></i> INGRESAR PERSONA</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" data-aos="fade-right">
+            <div class="col-md-12">
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header"   data-toggle="collapse" data-target="#clps-update" aria-expanded="true" aria-controls="clps-update">
+                        <div class="row">
+                            <div class="col-md-12 text-uppercase font-weight-bold" id="head-update" style="font-size: 24px;font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                                PUT/PATCH  <i class="fa fa-edit"></i>
+                                <a class="pull-right text-muted"><i class="fa fa-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clps-update" class="collapse" aria-labelledby="head-update" data-parent="#accordion">
+                        <div class="card-body">
+
+                            <div class="row" >
+                                <div class="col-md-12">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>Elija persona a actualizar
+                                            <a class="pull-right text-muted" id="update-reload" style="margin-right: 10px;">Refresh <i class="fa fa-refresh"></i></a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-12">
+                                    <div style="margin-bottom: 10px;">
+                                        <table id="dtbl-update" class="table table-striped table-bordered" style="width:100%;margin-top: 20px;">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-uppercase">Nombre</th>
+                                                <th class="text-uppercase">Apellido</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-12">
+                                    <h6>URL</h6>
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons?name=<span class="font-weight-bold" style="color: #fed136" id="update-url-inp1-span">{nombre}</span>&lastname=<span class="font-weight-bold" style="color: #fed136" id="update-url-inp2-span">{apellido}</span></p>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6>HEADERS</h6>
+                                    <pre data-trimmed="true" class="rainbow-show"><code data-language="json" class="rainbow rainbow-show">content-type: application/json</code></pre>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>INPUTS</h6>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <input id="update-inp1}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'nombre')" maxlength="20" placeholder="Nombre">
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese nombre
+                                        </div>
+                                    </div>
+                                    <div style="margin-bottom: 30px;">
+                                        <input id="update-inp2}" type="text" class="form-control" onkeypress="return check(event)" onkeyup="feedSpan(this, 'apellido')" maxlength="20" placeholder="Apellido">
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese apellido
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>BODY</h6>
+                                    </div>
+                                    <div style="margin-bottom: 10px;">
+                                        <pre data-trimmed="true" class="rainbow-show"><code data-language="json" class="rainbow rainbow-show">{
+    <span class="string">"name"</span>: <span id="update-inp1-span" class="font-weight-bold text-uppercase" style="color: #fed136; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">{nombre}</span>,
+    <span class="string">"lastName"</span>: <span id="update-inp2-span" class="font-weight-bold text-uppercase" style="color: #fed136; font-family: 'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif;">{apellido}</span>
+}</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col col-md-6">
+                                    <button id="update-btn}" type="button" class="btn btn-primary text-uppercase col-md-12"><i class='fa fa-circle-o-notch fa-spin d-none'></i> INGRESAR PERSONA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" data-aos="fade-right">
+            <div class="col-md-12">
+                <div class="card" style="margin-bottom: 20px;">
+                    <div class="card-header" data-toggle="collapse" data-target="#clps-delete" aria-expanded="true" aria-controls="clps-delete">
+                        <div class="row">
+                            <div class="col-md-12 text-uppercase font-weight-bold" id="head-delete" style="font-size: 24px;font-family: Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;">
+                                DELETE  <i class="fa fa-trash-o"></i>
+                                <a class="pull-right text-muted"><i class="fa fa-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="clps-delete" class="collapse" aria-labelledby="head-delete" data-parent="#accordion">
+                        <div class="card-body">
+
+                            <div class="row" >
+                                <div class="col-md-12">
+                                    <div style="margin-bottom: 20px;">
+                                        <h6>Elija persona a borrar
+                                            <a class="pull-right text-muted" id="delete-reload" style="margin-right: 10px;">Refresh <i class="fa fa-refresh"></i></a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-12">
+                                    <div style="margin-bottom: 10px;">
+                                        <table id="dtbl-delete" class="table table-striped table-bordered" style="width:100%;margin-top: 20px;">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-uppercase">Nombre</th>
+                                                <th class="text-uppercase">Apellido</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col-md-8">
+                                    <h6>URL</h6>
+                                    <p class="align-middle">http://api.pabloriosramirez.com/v1/persons?name=<span class="font-weight-bold" style="color: #fed136" id="delete-inp1-span">{nombre}</span>&lastname=<span class="font-weight-bold" style="color: #fed136" id="delete-inp2-span">{apellido}</span></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <button id="delete-btn}" type="button" class="btn btn-primary text-uppercase col-md-12" style="margin-top: 20px;"><i class='fa fa-circle-o-notch fa-spin d-none'></i> ELIMINAR PERSONA</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+&lt;!&ndash; Modals &ndash;&gt;
+<div id="get-mdl" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Response <span id="get-json-http_status" class="text-muted" style="margin-bottom: 10px;"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="text-muted text-uppercase" style="margin-bottom: 10px;">DataTable</h6>
+                        <table id="dtbl-get" class="table table-striped" style="width:100%;margin-top: 20px;">
+                            <thead>
+                            <tr>
+                                <th class="text-uppercase">Nombre</th>
+                                <th class="text-uppercase">Apellido</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <h6 class="text-muted text-uppercase" style="margin-bottom: 10px;">JSON</h6>
+                        <div class="row">
+                            <div class="col-lg-12" id="codeWrapper" >
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="post-mdl" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Response <span id="post-json-http_status" class="text-muted" style="margin-bottom: 10px;"></span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                &lt;!&ndash;                <div class="swal2-header">
+                                    <div class="swal2-icon swal2-success swal2-animate-success-icon" style="display: flex;"><div class="swal2-success-circular-line-left" style="background-color: rgb(255, 255, 255);"></div><span class="swal2-success-line-tip"></span> <span class="swal2-success-line-long"></span><div class="swal2-success-ring"></div> <div class="swal2-success-fix" style="background-color: rgb(255, 255, 255);"></div><div class="swal2-success-circular-line-right" style="background-color: rgb(255, 255, 255);"></div></div>
+                                </div>&ndash;&gt;
+                <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="text-muted text-uppercase" style="margin-bottom: 10px;">HEADERS</h6>
+                        <div id="post-header-code"></div>
+                    </div>
+                    &lt;!&ndash;                    <div class="col-md-6">
+                                            <h6 class="text-muted text-uppercase" style="margin-bottom: 10px;">Location</h6>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                            </div>
+                                            <div class="col-md-6">
+                                            </div>
+                                        </div>&ndash;&gt;
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>-->
+<style>
+    .timeline-panel {
+        margin-top: 40px !important;
+    }
+    @media screen and (max-width: 768px) {
+        .timeline-panel {
+            margin-top: 0px !important;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .timeline-panel {
+            margin-top: 10px !important;
+        }
+    }
+
+
+
+</style>
+<!-- Experience -->
+<section id="experience" class="">
+    <div class="container">
+        <div class="row" data-aos="fade-right">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading text-uppercase">Experiencia</h2>
+                <h3 class="section-subheading text-muted">Linea temporal de experiencias laborales.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="timeline">
+                    <li  data-aos="zoom-in-down"
+                         data-aos-duration="5000">
+                        <div class="timeline-image">
+                            <img class="rounded-circle img-fluid" th:src="@{/images/about/ExpertChoice.jpg}" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h6 class="subheading text-muted">Expert Choice S.A.</h6>
+                            </div>
+                            <div class="timeline-body">
+                                <h5>Analista Programador</h5>
+                                <p class="text-muted " style="font-size: 11px;">Junio 2017 - Febrero 2018</p>
+                                <p class="text-muted font-weight-bold" style="font-size: 11px;">Proyecto aplicativo ERP - Cliente interno</p>
+                                <!--<p class="text-muted" style="font-size: 12px;">Encargado del análisis, diseño, desarrollo e implementación de un software ERP (Enterprise Resource Planning), en el Back-end de su módulo CRM (Customer Relationship Management) se realizó integración con diversos Web Services Bureaus (Transunion, Equifax y Sinacofi), extracción de data de las páginas de poder judicial a través de HtmlUnit, realización de Ratios Financieros, Answer Tree Business  y gráficos para Dashboard.</p>-->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted"  data-aos="zoom-in-down"
+                        data-aos-duration="5000">
+                        <div class="timeline-image">
+                            <img class="rounded-circle img-fluid" th:src="@{/images/about/ExpertChoice.jpg}" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h6 class="subheading text-muted">Expert Choice S.A.</h6>
+                            </div>
+                            <div class="timeline-body">
+                                <h5>Practicante de Desarrollador</h5>
+                                <p class="text-muted " style="font-size: 11px;">Enero 2017 - Mayo 2018</p>
+                                <p class="text-muted font-weight-bold" style="font-size: 11px;">Fase de entrega aplicativo POS/CRM - Cámara de Comercio de Santiago</p>
+                                <p class="text-muted" style="font-size: 12px;">Práctica Profesional, encargado de la mantención y realización de nuevos requerimientos para sistema comercial para fase de cierre de proyecto.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-aos="zoom-in-down"
+                        data-aos-duration="5000">
+                        <div class="timeline-image">
+                            <img class="rounded-circle img-fluid" th:src="@{/images/about/Patroll.jpg}" alt="">
+                        </div>
+                        <div class="timeline-panel" >
+                            <div class="timeline-heading">
+                                <h6 class="subheading text-muted">Empresa de Seguridad PATROLL S.A.</h6>
+                            </div>
+                            <div class="timeline-body">
+                                <h5>Jefe de Laboratorio de Electrónica</h5>
+                                <p class="text-muted " style="font-size: 11px;">Marzo 2012 - Enero 2013</p>
+                                <p class="text-muted">Encargado del Departamento de Laboratorio donde se realizan mantención, reparación, control de calidad y soporte de equipos de vigilancia y seguridad empresarial.</p>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="timeline-inverted"  data-aos="zoom-in-down"
+                        data-aos-duration="5000">
+                        <div class="timeline-image">
+                            <img class="rounded-circle img-fluid" th:src="@{/images/about/Transbank.jpg}" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h6 class="subheading">Servicio Técnico de Transbank S Y R LTDA</h6>
+                            </div>
+                            <div class="timeline-body">
+                                <h5>Practicante Técnico en Electrónica</h5>
+                                <p class="text-muted " style="font-size: 11px;">Noviembre 2011 - Febrero 2012</p>
+                                <p class="text-muted">Práctica Profesional, encargado de mantención y reparación en terreno de equipos de tarjetas vinculadas a Transbank dentro de Santiago.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact_me" class="map-image">
+    <div class="container" style="color: #fff !important;" data-aos="fade-right">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8  text-center">
+                <h2 class="section-heading text-uppercase" >Contáctame</h2>
+                <hr>
+                <h3 class="section-subheading">Si tienes preguntas o quieres saber algo, contáctame por el medio que quieras.</h3>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                <i class="fa fa-phone fa-3x"></i>
+                <p class="font-weight-bold">+569 7849 6719</p>
+            </div>
+            <div class="col-lg-6  text-center">
+                <i class="fa fa-envelope-o fa-3x"></i>
+                <p class="font-weight-bold">
+                    <a href="mailto:pa.riosramirez@gmail.com">pa.riosramirez@gmail.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<footer class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">&copy;Copyright 2019</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/pabloriosramire" title="Twitter">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/pabloriosramirez/" title="Linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/pabloriosramirez" title="GitHub">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!--                <ul class="list-inline quicklinks">
+                                    <li class="list-inline-item">
+                                        <a href="#">Politica de privacidad</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Terminos de uso</a>
+                                    </li>
+                                </ul>-->
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JavaScript -->
+<script th:src="@{/vendors/jquery/3.3.1/jquery.min.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/bootstrap/4.0.0/js/bootstrap.bundle.min.js}" type="text/javascript"></script>
+<!-- Plugin JavaScript -->
+<script th:src="@{/vendors/jquery-easing/jquery.easing.min.js}" type="text/javascript"></script>
+<!-- Custom scripts for this template -->
+<script th:src="@{/js/agency.min.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/DataTables/1.10.16/js/jquery.dataTables.min.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/DataTables/1.10.16/js/dataTables.bootstrap4.min.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/DataTables/1.10.16/js/dataTables.select.min.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/sweetalert2/7.22.2/js/sweetalert2.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/Rainbow/2.1.4/js/rainbow.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/Rainbow/2.1.4/js/language/generic.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/Rainbow/2.1.4/js/language/json.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/aos/2.3.1/dist/aos.js}" type="text/javascript"></script>
+<script th:src="@{/vendors/prBar/1.0.0/js/prBar.js}" type="text/javascript"></script>
+<!--<script th:src="@{/vendors/lineProgressBar/1.0.0/jquery.lineProgressbar.js}"></script>-->
+
+
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://unpkg.com/promise-polyfill"></script>
+
+
+<script th:src="@{/js/app.js}"></script>
+<script th:src="@{/js/portafolio.js}"></script>
+<script>
+    $(document).ready(function () {
+//        hideURLParams();
+        console.log('Focus: ${focus==null?"":focus}');
+        goToId('${focus==null?"":focus}');
+        AOS.init({
+            duration: 1300,
+        });
+        $('.prbar').init_prbar();
+    });
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121480722-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121480722-1');
+</script>
+
+</body>
+</html>
